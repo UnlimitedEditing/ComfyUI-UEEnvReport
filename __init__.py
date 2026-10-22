@@ -89,7 +89,7 @@ except Exception as e:  # never break startup
     print(f"[EnvProbe] import-time probe failed: {e}")
 
 
-class EnvProbe:
+class UEEnvProbeReport:
     @classmethod
     def INPUT_TYPES(cls):
         return {"required": {"note": ("STRING", {"default": ""})}}
@@ -116,5 +116,5 @@ class EnvProbe:
         return (torch.from_numpy(arr).unsqueeze(0),)
 
 
-NODE_CLASS_MAPPINGS = {"EnvProbe": EnvProbe}
-NODE_DISPLAY_NAME_MAPPINGS = {"EnvProbe": "Env Probe"}
+NODE_CLASS_MAPPINGS = {"UEEnvProbeReport": UEEnvProbeReport}
+NODE_DISPLAY_NAME_MAPPINGS = {"UEEnvProbeReport": "UE Env Probe Report"}
